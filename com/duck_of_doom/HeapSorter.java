@@ -13,15 +13,14 @@ package com.duck_of_doom;
 public class HeapSorter extends Sorter {
  
     private final int[] heap; // a min heap that holds the data to sort
-    private final int[] input;
     private int length; // number of items in the heap
     
     /**
      * @param  input an array which shall be overwritten (sorted) by the sort() function
      */
     public HeapSorter(int[] input) {
+        super(input);
         length = 0;
-        this.input = input;
         heap = new int[input.length];
         for (int i = 0; i < input.length; i++)
             push(input[i]);
